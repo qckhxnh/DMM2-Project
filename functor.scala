@@ -33,3 +33,12 @@ object FunctorUsage {
   val resultList: List[Int] = Functor[List].map(listValue)(square)
   println(resultList) // Output: List(1, 4, 9, 16, 25)
 }
+
+/**In this implementation:
+
+- We define a Functor trait with a map method. This trait is parameterized with a type constructor F[_], representing a higher-kinded type.
+- We provide instances of Functor for different data types like Option and List in the FunctorInstances object. Each instance implements the map method for the corresponding data type.
+- In the FunctorUsage object, we demonstrate how to use the functor instances by mapping functions over values of Option and List.
+- For example, we define addOne and square functions and map them over Option and List values to transform their contents.
+
+This implementation showcases the use of type classes and higher-kinded types in Scala to define and use functors.**/
